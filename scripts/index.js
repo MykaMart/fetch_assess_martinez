@@ -15,11 +15,12 @@ const processItems = async () => {
 }
 
 const sortFilterItems = (items) => {
+
 	// Filter Unnamed Items
-	console.log(items)
+	// console.log(items)
 	let filteredItems = items.filter((item) => {
 		let named = true
-		if (item.name == "" || item.name == null){
+		if (item.name == '' || item.name == null){
 			named = false
 		}
 		return named
@@ -49,8 +50,34 @@ const sortFilterItems = (items) => {
 
 }
 
+const appendItemsToDom = (items) => {
+	const columns = document.getElementById('itemsColumns');
+	items.map((item, index) => {
+
+		const card = document.createElement('div')
+		card.className = 'card'
+		card.id = 'card-' + index.toString();
+
+		const listId = document.createElement('p')
+		const idText = document.createTextNode('List ID: ' + item.listId.toString())
+		listId.appendChild(idText)
+		listId.className = 'listId';
+		listId.id = 'id-' + item.listId.toString();
+
+		const name = document.createElement('p')
+		const nameText =document.createTextNode('Name: ' +item.name)
+		name.appendChild(nameText)
+		name.className = 'listId';
+		name.id = 'id-' + item.name;
+
+		card.appendChild(listId);
+		card.appendChild(name);
+		columns.appendChild(card);
+		
+		// console.log(item)
+	})
+}
+
 processItems()
 	.then(response => sortFilterItems(response))
-	.then(processed => {processedItems = processed})
-
-console.log(processedItems)
+	.then(processed => appendItemsToDom(processed))
