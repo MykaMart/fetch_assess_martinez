@@ -65,7 +65,7 @@ const appendItemsToDom = (items) => {
 		listId.id = 'id-' + item.listId.toString();
 
 		const name = document.createElement('p')
-		const nameText =document.createTextNode('Name: ' +item.name)
+		const nameText =document.createTextNode(item.name)
 		name.appendChild(nameText)
 		name.className = 'listId';
 		name.id = 'id-' + item.name;

@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Courgette";
+  src: url("../assets/Courgette-Regular.ttf") format("truetype");
+}
+body {
+  background-color: #58D1CB;
+}
+body #titleContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2vw;
+}
+body #titleContainer h1 {
+  font-family: "Courgette", sans-serif;
+  font-size: 3rem;
+}
+body #headerContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+body #headerContainer h2 {
+  font-family: "Courgette", sans-serif;
+  font-size: 2.2rem;
+}
+body #itemsContainer {
+  margin: 5vw;
+}
+body #itemsContainer #itemsColumns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+body #itemsContainer #itemsColumns .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F5D638;
+  border-radius: 10px;
+  height: 20rem;
+}
+body #itemsContainer #itemsColumns .card > * {
+  align-self: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  height: 1.75rem;
+}
+body #itemsContainer #itemsColumns > * {
+  flex-basis: 250px;
+  flex-grow: 1;
+}
+
+/*# sourceMappingURL=index.css.map */
